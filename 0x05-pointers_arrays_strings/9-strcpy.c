@@ -5,7 +5,7 @@
  *			including the terminating null
  * @dest: The destination string
  * @src: The source string
- * return: The pointer to dest
+ * Return: The pointer to dest
  */
 char *_strcpy(char *dest, char *src)
 {
