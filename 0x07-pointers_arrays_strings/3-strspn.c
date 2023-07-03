@@ -1,28 +1,23 @@
 #include "main.h"
 
 /**
- * _strchr - locates a character in a string
- * @s: string to be scanned
- * @c: character to be located
- * Return: pointer to the first occurrence of the character c in the string s,
- * or NULL if the character is not found
+ * inCharSet - checks if a character is in a set of characters
+ * @c: character to be checked
+ * @accept: string containing the characters to match
+ * Return: 1 if c is in accept, 0 otherwise
  */
-char	*_strchr(char *s, char c)
+int inCharSet(char c, char *accept)
 {
-	int	i;
+	int i = 0;
 
-	i = 0;
-	while (s[i] != c)
-	{
-		if (s[i] == '\0')
-			return (0);
-		i++;
-	}
-	return (&s[i]);
+	while (accept[i])
+		if (c == accept[i++])
+			return (1);
+	return (0);
 }
 
 /**
- * _strspn - gets the length of a prefix substring
+ * _strspn - a function that gets the length of a prefix substring.
  * @s: string to be scanned
  * @accept: string containing the characters to match
  *
@@ -31,13 +26,9 @@ char	*_strchr(char *s, char c)
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int	i = 0;
+	unsigned int i = 0;
 
-	while (s[i] != '\0')
-	{
-		if (ft_strchr(accept, s[i]) == 0)
-			break;
-		++i;
-	}
+	while (s[i] && inCharSet(s[i], accept))
+		i++;
 	return (i);
 }
