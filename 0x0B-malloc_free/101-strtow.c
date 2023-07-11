@@ -3,7 +3,7 @@
 
 /**
  *count_words - counts the words of a string
- *@s: the string in hand
+ *@s: the string in hand.
  *Return: the number of words
  */
 
@@ -87,4 +87,4 @@ char **strtow(char *str)
 	}
 	words[count] = NULL;
 	return (words);
-}
+
