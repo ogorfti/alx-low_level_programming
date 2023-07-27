@@ -5,6 +5,8 @@
 /**
  *before_main - print a message before the main function is executed
  */
+void before_main(void) __attribute__((constructor));
+
 void  before_main(void)
 {
 	printf(STARTUP_MESSAGE);
